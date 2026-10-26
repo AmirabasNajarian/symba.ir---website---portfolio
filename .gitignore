@@ -1,0 +1,34 @@
+# Production backend, secrets, authentication and private data
+*.php
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+private/
+admin/
+applications/
+data/applications/
+uploads/
+resumes/
+symba-private/
+Documents/
+# Backups, databases, logs and raw source media
+*.zip
+*.sql
+*.sqlite*
+*.db
+*.log
+*.bak
+*.backup
+*.HEIC
+*.heic
+*.mp4
+*.pdf
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
