@@ -1,0 +1,6 @@
+/* Additional photo belongs only to the Lagoon project card. */
+#services.symba-projects .service-slide-content .symba-lagoon-photo{display:block;margin-top:26px;border:1px solid #EF7A2D66;border-radius:14px;overflow:hidden;background:#F0E6D8;box-shadow:0 8px 24px #22222214;line-height:0}
+#services.symba-projects .service-slide-content .symba-lagoon-photo img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;transform:none;transition:filter .35s ease}
+#services.symba-projects .symba-lagoon-photo:hover img{filter:brightness(1.06)}
+#services.symba-projects .symba-lagoon-photo:focus-visible{outline:3px solid #EF7A2D;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){#services.symba-projects .symba-lagoon-photo img{transition:none}}

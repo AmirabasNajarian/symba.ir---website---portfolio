@@ -1,0 +1,26 @@
+/* Scoped to Home Projects; the products slider remains independent. */
+#services.symba-projects .symba-project-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;max-width:1440px;margin:0 auto;padding:16px 32px 40px;direction:ltr;align-items:start}
+#services .symba-project-tabs{display:flex;flex-direction:column;gap:12px;padding:12px;background:#F0E6D8;border:1px solid #4D2C2926;border-radius:22px}
+#services .symba-project-tab{display:flex;align-items:center;gap:12px;width:100%;min-height:72px;padding:16px;text-align:left;font:inherit;font-weight:600;line-height:1.45;color:#4D2C29;background:transparent;border:1px solid transparent;border-radius:14px;cursor:pointer;transition:background .3s,color .3s,box-shadow .3s,transform .3s}
+#services .symba-project-tab__number{font-size:12px;opacity:.65;flex-shrink:0}
+#services .symba-project-tab:hover{background:#EF7A2D1a;transform:translateX(3px)}
+#services .symba-project-tab[aria-selected="true"]{background:#5A1D16;color:#F0E6D8;border-color:#EF7A2D;box-shadow:inset 4px 0 #EF7A2D,0 8px 20px #2222221a}
+#services .symba-project-tab:focus-visible,#services [role="tabpanel"]:focus-visible{outline:3px solid #EF7A2D;outline-offset:4px}
+#services.symba-projects .slideshow-container{display:block;overflow:visible;min-width:0;padding:0;direction:ltr;scroll-snap-type:none}
+#services.symba-projects .service-slide{width:100%;max-width:none;min-height:520px;margin:0;background:#F0E6D8;border-color:#EF7A2D33;opacity:1;transform:none}
+#services.symba-projects .service-slide[hidden]{display:none!important}
+#services.symba-projects .service-slide.is-selected{animation:symba-project-enter .65s ease both}
+#services.symba-projects .service-slide:hover{transform:translateY(-5px);box-shadow:0 25px 60px #EF7A2D26}
+#services.symba-projects .service-slide::before,#services.symba-projects .service-slide-content h2::after{background:#EF7A2D}
+#services.symba-projects .service-slide img{width:43%;object-fit:cover}
+#services.symba-projects .service-slide-content{width:57%;padding:clamp(24px,3vw,44px)}
+#services.symba-projects .service-slide-content h2{color:#5A1D16;font-size:clamp(22px,2vw,29px)}
+#services.symba-projects .service-slide-content p{opacity:1;transform:none;color:#4D2C29;text-align:left;margin-bottom:0;font-size:16px;line-height:1.85}
+#services.symba-projects .service-slide-content h2::after{transform:scaleX(1)}
+html[lang="fa"] #services .symba-project-tab{direction:rtl;text-align:right}
+html[lang="fa"] #services.symba-projects .service-slide-content{direction:rtl;text-align:right}
+html[lang="fa"] #services.symba-projects .service-slide-content p{text-align:right}
+@keyframes symba-project-enter{from{opacity:0;translate:0 16px}to{opacity:1;translate:0 0}}
+@media(max-width:1000px){#services.symba-projects .symba-project-layout{grid-template-columns:195px minmax(0,1fr);gap:18px;padding-inline:20px}#services.symba-projects .service-slide{flex-direction:column}#services.symba-projects .service-slide img{width:100%;height:300px;object-position:center}#services.symba-projects .service-slide-content{width:100%}}
+@media(max-width:700px){#services.symba-projects .symba-project-layout{grid-template-columns:minmax(0,1fr);padding-inline:16px}#services .symba-project-tabs{flex-direction:row;overflow-x:auto;gap:8px;border-radius:18px}#services .symba-project-tab{width:auto;min-height:54px;flex:0 0 auto;padding:12px;font-size:14px;gap:8px}#services.symba-projects .service-slide{min-height:0}#services.symba-projects .service-slide img{height:300px}#services.symba-projects .service-slide-content{padding:26px 22px}}
+@media(prefers-reduced-motion:reduce){#services.symba-projects .service-slide.is-selected{animation:none}#services .symba-project-tab{transition:none}}

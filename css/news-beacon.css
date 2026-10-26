@@ -1,0 +1,13 @@
+/* Persistent news shortcut, independent from the navigation bar. */
+a.symba-news-beacon { position:fixed; top:26px; left:24px; right:auto; z-index:990; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:44px; padding:11px 17px; border:1px solid #EF7A2D; border-radius:28px; background:#EF7A2D; color:#222222; font-family:Arial,sans-serif; font-size:14px; font-weight:700; line-height:1.2; text-decoration:none; white-space:nowrap; box-sizing:border-box; box-shadow:0 6px 22px #22222226; transition:background-color 200ms ease,color 200ms ease,box-shadow 200ms ease,transform 200ms ease; isolation:isolate; }
+a.symba-news-beacon::before { content:""; position:absolute; inset:-1px; z-index:-1; border:1px solid #EF7A2D; border-radius:inherit; pointer-events:none; animation:symba-news-ring 3.4s ease-out infinite; }
+.symba-news-beacon__dot { width:6px; height:6px; flex-shrink:0; border-radius:50%; background:#5A1D16; box-shadow:0 0 0 4px #5A1D1615; }
+.symba-news-beacon__arrow { font-size:17px; transition:transform 200ms ease; }
+a.symba-news-beacon:hover { background:#4D2C29; color:#F0E6D8; transform:translateY(-2px); box-shadow:0 8px 24px #22222233; }
+a.symba-news-beacon:hover .symba-news-beacon__dot { background:#EF7A2D; }
+a.symba-news-beacon:hover .symba-news-beacon__arrow { transform:translate(2px,-2px); }
+a.symba-news-beacon:focus-visible { outline:3px solid #5A1D16; outline-offset:5px; }
+@keyframes symba-news-ring { 0%,30% { opacity:0; transform:scale(1); } 36% { opacity:.65; transform:scale(1); } 80%,100% { opacity:0; transform:scale(1.17,1.45); } }
+@media(max-width:1499px) { a.symba-news-beacon { top:100px; left:20px; } }
+@media(max-width:768px) { a.symba-news-beacon { top:86px; left:14px; min-height:38px; padding:9px 13px; gap:8px; font-size:12px; } }
+@media(prefers-reduced-motion:reduce) { a.symba-news-beacon,a.symba-news-beacon .symba-news-beacon__arrow { transition:none; } a.symba-news-beacon::before { animation:none; } }

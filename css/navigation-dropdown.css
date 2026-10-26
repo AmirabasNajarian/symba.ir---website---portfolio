@@ -1,0 +1,91 @@
+/* Shared compact navigation; page styles and Persian text rules stay intact. */
+header { max-width:1040px; }
+.header-shell .nav-container { padding-inline:24px; overflow:visible; }
+.nav-links.symba-nav { align-items:center; gap:2px; overflow:visible; }
+.symba-nav > a, .symba-nav .symba-nav-group > a { display:block; padding:10px 16px; white-space:nowrap; color:#F0E6D8; }
+.symba-nav-group { position:relative; display:flex; align-items:center; }
+.symba-nav-group > a { padding-inline-end:5px !important; }
+.symba-submenu-toggle { display:grid; place-items:center; flex-shrink:0; width:28px; height:34px; border:0; border-radius:18px; padding:0; background:transparent; color:#F0E6D8; font:inherit; font-size:21px; cursor:pointer; }
+.symba-submenu-toggle:hover, .symba-submenu-toggle:focus-visible { background:#EF7A2D; color:#222222; }
+.symba-nav a:hover, .symba-nav a.active { background:#EF7A2D; color:#222222; transform:none; }
+.symba-submenu { position:absolute; inset-block-start:100%; inset-inline-start:0; z-index:1100; min-width:220px; padding:10px; border:1px solid #EF7A2D; border-radius:18px; background:#4D2C29; box-shadow:0 12px 28px #22222240; display:none; }
+.symba-nav-group.is-open > .symba-submenu { display:flex; flex-direction:column; gap:3px; }
+.symba-nav .symba-submenu a, .symba-nav-soon { display:flex; align-items:center; justify-content:space-between; gap:14px; margin:0; padding:12px 14px; border-radius:10px; font-size:14px; line-height:1.5; text-align:start; text-transform:none; letter-spacing:0; color:#F0E6D8; white-space:nowrap; }
+.symba-nav-soon { opacity:.65; cursor:default; }
+.symba-nav-soon small { font-size:10px; color:#F0E6D8; }
+.symba-nav :focus-visible { outline:2px solid #EF7A2D; outline-offset:2px; }
+#services, #products, #global-presence { scroll-margin-top:120px; }
+@media(max-width:768px) {
+  .header-shell .nav-container { padding-inline:18px; }
+  .nav-links.symba-nav { align-items:stretch; max-height:calc(100dvh - 110px); overflow-y:auto; }
+  .symba-nav-group { flex-wrap:wrap; }
+  .symba-nav .symba-nav-group > a { flex:1; text-align:start; padding:12px 14px; margin:0; }
+  .symba-submenu-toggle { width:42px; height:42px; }
+  .symba-submenu { position:static; flex-basis:100%; min-width:0; margin-block:3px 8px; box-shadow:none; background:#5A1D16; }
+  .symba-nav > a { margin:0; padding:12px 14px; text-align:start; }
+}
+
+/* The page link and its small lower arrow share one pill. */
+.nav-links.symba-nav .symba-nav-group { display:grid; grid-template-columns:1fr; grid-template-rows:28px 12px; border-radius:25px; padding:2px 10px; }
+.nav-links.symba-nav .symba-nav-group > a { grid-column:1; grid-row:1; padding:4px 10px 0 !important; margin:0; line-height:24px; text-align:center; background:transparent; box-shadow:none; transform:none; border-radius:0; }
+.nav-links.symba-nav .symba-nav-group > .symba-submenu-toggle { grid-column:1; grid-row:2; justify-self:center; width:100%; height:12px; margin:0; padding:0; background:transparent; border-radius:0; color:inherit; font-size:0; }
+.symba-submenu-toggle span { display:block; width:5px; height:5px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:translateY(-2px) rotate(45deg); font-size:0; }
+.nav-links.symba-nav .symba-nav-group { color:#F0E6D8; }
+.nav-links.symba-nav .symba-nav-group.is-current,
+.nav-links.symba-nav .symba-nav-group:hover,
+.nav-links.symba-nav .symba-nav-group:focus-within { background:#EF7A2D; color:#222222; }
+.nav-links.symba-nav .symba-nav-group.is-current > a,
+.nav-links.symba-nav .symba-nav-group:hover > a,
+.nav-links.symba-nav .symba-nav-group:focus-within > a { color:#222222; }
+@media(max-width:768px) {
+ .nav-links.symba-nav .symba-nav-group { grid-template-rows:30px 16px; padding:3px 10px; }
+ .nav-links.symba-nav .symba-nav-group > .symba-submenu-toggle { height:16px; }
+ .nav-links.symba-nav .symba-submenu { grid-column:1; grid-row:3; width:100%; box-sizing:border-box; }
+}
+
+/* Soft reveal shared by English and Persian dropdowns. */
+.symba-nav .symba-submenu {
+ display:flex; flex-direction:column; gap:4px;
+ opacity:0; visibility:hidden; pointer-events:none;
+ transform:translateY(-7px) scale(.985); transform-origin:top center;
+ background:linear-gradient(155deg,#4D2C29,#5A1D16);
+ border:1px solid #EF7A2D; border-radius:18px;
+ box-shadow:0 16px 36px #22222240, inset 0 1px 0 #F0E6D820;
+ transition:opacity 450ms ease,transform 500ms cubic-bezier(.22,1,.36,1),visibility 0s linear 500ms;
+}
+.symba-nav .symba-nav-group.is-open > .symba-submenu {
+ opacity:1; visibility:visible; pointer-events:auto;
+ transform:translateY(0) scale(1);
+ transition-delay:0s;
+}
+.symba-nav .symba-submenu > * {
+ opacity:0; transform:translateY(-3px);
+ transition:opacity 300ms ease,transform 450ms ease,background-color 180ms ease,color 180ms ease;
+}
+.symba-nav .is-open > .symba-submenu > * { opacity:1; transform:translateY(0); transition-delay:70ms; }
+.symba-nav .is-open > .symba-submenu > :nth-child(2) { transition-delay:120ms; }
+.symba-nav .is-open > .symba-submenu > :nth-child(3) { transition-delay:170ms; }
+.symba-nav .symba-submenu a:hover { background:#EF7A2D; color:#222222; box-shadow:none; }
+.symba-submenu-toggle span { transition:transform 450ms cubic-bezier(.22,1,.36,1); }
+.is-open > .symba-submenu-toggle span { transform:translateY(1px) rotate(225deg); }
+@media(max-width:768px) {
+ .symba-nav .symba-submenu {
+  max-height:0; min-height:0; overflow:hidden;
+  padding-block:0; margin-block:0; border-block-width:0;
+  transform:translateY(-4px);
+  transition:opacity 400ms ease,transform 450ms ease,max-height 500ms ease,padding 500ms ease,margin 500ms ease,border-width 500ms ease,visibility 0s linear 500ms;
+ }
+ .symba-nav .symba-nav-group.is-open > .symba-submenu {
+  max-height:260px; padding-block:10px; margin-block:3px 8px; border-block-width:1px;
+ }
+}
+@media(prefers-reduced-motion:reduce) {
+ .symba-nav .symba-submenu,.symba-nav .symba-submenu > *,.symba-submenu-toggle span { transition:none; transform:none; }
+}
+
+/* Nine gallery categories remain scrollable on short screens. */
+.nav-links.symba-nav .symba-gallery-submenu { width:290px; max-height:min(65vh,520px); overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#EF7A2D #4D2C29; }
+@media(max-width:768px) {
+ .nav-links.symba-nav .symba-gallery-group > .symba-gallery-submenu { width:100%; max-height:0; overflow-y:hidden; }
+ .nav-links.symba-nav .symba-gallery-group.is-open > .symba-gallery-submenu { max-height:min(55vh,460px); overflow-y:auto; }
+}

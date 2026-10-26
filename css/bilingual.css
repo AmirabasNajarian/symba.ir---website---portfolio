@@ -1,0 +1,154 @@
+@font-face { font-family:Vazirmatn; src:url('https://symba.ir/fonts/Vazirmatn.woff2') format('woff2'); font-style:normal; font-weight:100 900; font-display:swap; }
+:root { --desert:#EF7A2D; --sand:#F0E6D8; --evening-desert:#5A1D16; --evening-sand:#4D2C29; --petroleum:#222222; }
+html[dir="rtl"] body { direction:rtl; text-align:right; font-family:Vazirmatn, Tahoma, Arial, sans-serif; }
+
+/* Site-wide Persian typography: all regular copy follows RTL/right alignment.
+   Component-specific centered content and technical LTR values are restored
+   explicitly below. */
+html[dir="rtl"] :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,label,address,blockquote,figcaption,td,th) {
+  direction:rtl;
+  text-align:right;
+  text-align-last:right;
+}
+
+/* Language control sits outside the glass navigation bar on every page. */
+.header-shell { width:100%; display:flex; align-items:center; gap:12px; direction:rtl; }
+header { width:97%; max-width:1240px; background:transparent; border:0; border-radius:0; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; }
+.header-shell .nav-container { flex:1 1 auto; min-width:0; direction:ltr; background:var(--evening-sand); border:1px solid var(--desert); border-radius:50px; box-shadow:0 8px 32px rgba(34,34,34,.3); }
+.language-switch { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; min-width:48px; height:48px; padding:0 12px; border:1px solid var(--desert); border-radius:999px; color:var(--sand); background:var(--evening-desert); box-shadow:0 8px 22px rgba(34,34,34,.22); font:800 13px/1 Arial,sans-serif; text-decoration:none; letter-spacing:.06em; transition:transform .2s ease,background .2s ease,color .2s ease; }
+.language-switch:hover,.language-switch:focus-visible { color:var(--petroleum); background:var(--desert); border-color:var(--desert); transform:translateY(-1px); outline:2px solid var(--sand); outline-offset:2px; }
+
+/* Persian desktop order: language at the far right, menu at the right of the bar, SYMBA at the left. */
+html[dir="rtl"] .nav-container { direction:ltr; }
+html[dir="rtl"] .nav-links { direction:rtl; margin-left:auto; margin-right:0; }
+html[dir="rtl"] .logo { direction:ltr; margin-left:0; margin-right:auto; }
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .hero-content :is(h1,h2,h3,h4,h5,h6,p),
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .section-description {
+  text-align:center;
+  text-align-last:center;
+}
+html[dir="rtl"] .video-hero .hero-content p { text-align:center; text-align-last:center; width:100%; }
+html[dir="rtl"] p { text-align:right; text-align-last:right; text-justify:auto; }
+html[dir="rtl"] input,html[dir="rtl"] textarea,html[dir="rtl"] select { direction:rtl; text-align:right; }
+html[dir="rtl"] input[type="email"],html[dir="rtl"] input[type="tel"] { direction:ltr; text-align:left; unicode-bidi:isolate; }
+html[dir="rtl"] [dir="ltr"] { direction:ltr; unicode-bidi:isolate; }
+html[dir="rtl"] .product-specs,html[dir="rtl"] .service-list,html[dir="rtl"] .footer-links { padding-right:0; }
+/* Keep the slider's scroll coordinate system LTR so the shared Home script
+   behaves identically in both languages, while card content remains Persian RTL. */
+html[dir="rtl"] .products-slides { direction:ltr; }
+html[dir="rtl"] .product-slide,
+html[dir="rtl"] .product-slide-card,
+html[dir="rtl"] .product-info-section { direction:rtl; }
+html[dir="rtl"] .careers-back { direction:rtl; }
+html[dir="rtl"] .lightbox-prev { right:1rem; left:auto; }
+html[dir="rtl"] .lightbox-next { left:1rem; right:auto; }
+
+/* Persian About service cards: keep narrow-column copy readable and aligned. */
+html[dir="rtl"] .services .service-card {
+  display:flex;
+  flex-direction:column;
+}
+html[dir="rtl"] .services .service-list {
+  display:flex;
+  flex:1 1 auto;
+  flex-direction:column;
+  justify-content:center;
+  padding:1.65rem 1.6rem 1.8rem;
+}
+html[dir="rtl"] .services .service-item {
+  margin:0 0 .75rem;
+  opacity:1;
+  transform:none;
+  color:var(--desert);
+  font-size:1.08rem;
+  font-weight:800;
+  line-height:1.75;
+  text-align:center;
+}
+html[dir="rtl"] .services .service-list p {
+  margin:0;
+  color:#444444;
+  font-size:1rem;
+  line-height:2;
+  text-align:center;
+  text-align-last:center;
+  text-justify:auto;
+  hyphens:none;
+  word-spacing:normal;
+}
+html[dir="rtl"] .services .service-card:hover .service-item {
+  opacity:1;
+  transform:none;
+}
+
+/* Persian About alignment: partnership copy centered, office cards right-aligned. */
+html[dir="rtl"] .products > .container > p {
+  text-align:center;
+  text-align-last:center;
+}
+html[dir="rtl"] .global-presence .office-card,
+html[dir="rtl"] .global-presence .office-name,
+html[dir="rtl"] .global-presence .office-details {
+  direction:rtl;
+  text-align:right;
+  text-align-last:right;
+}
+html[dir="rtl"] #manufacturing .about-text p {
+  direction:rtl;
+  text-align:right;
+  text-align-last:right;
+}
+
+/* Persian Home: right-align project overlay cards and the SEO summary bar. */
+html[dir="rtl"] .gallery-overlay .gallery-content {
+  width:100%;
+  direction:rtl;
+  text-align:right;
+}
+html[dir="rtl"] .gallery-overlay .gallery-content h3,
+html[dir="rtl"] .gallery-overlay .gallery-content p {
+  direction:rtl;
+  text-align:right;
+  text-align-last:right;
+}
+html[dir="rtl"] .gallery-overlay .gallery-badges {
+  direction:rtl;
+  justify-content:flex-start;
+}
+html[dir="rtl"] .seo-content,
+html[dir="rtl"] .seo-content h2,
+html[dir="rtl"] .seo-content p {
+  direction:rtl;
+  text-align:right;
+  text-align-last:right;
+}
+
+/* Persian Contact: keep headings RTL, but align phone numbers and email LTR. */
+html[dir="rtl"] .info-card:not(.info-card--wide) > div {
+  flex:1 1 auto;
+  min-width:0;
+}
+html[dir="rtl"] .info-card a[href^="tel:"],
+html[dir="rtl"] .info-card a[href^="mailto:"] {
+  display:block;
+  width:max-content;
+  max-width:100%;
+  margin-right:auto;
+  margin-left:0;
+  direction:ltr;
+  text-align:left;
+  unicode-bidi:isolate;
+}
+@media (max-width:768px) {
+  .header-shell { gap:7px; }
+  header { width:96%; }
+  .header-shell .nav-container { overflow:visible; }
+  .language-switch { min-width:42px; width:42px; height:42px; padding:0; font-size:12px; }
+  html[dir="rtl"] p { text-align:right; text-align-last:right; }
+  html[dir="rtl"] .nav-toggle { order:-1; }
+  html[dir="rtl"] .nav-links { direction:rtl; text-align:right; }
+  html[dir="rtl"] .services .service-list { padding:1.4rem 1.3rem 1.55rem; }
+  html[dir="rtl"] .services .service-list p { line-height:1.9; text-align:center; text-align-last:center; }
+}
